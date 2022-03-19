@@ -190,3 +190,5 @@ function saveTasks() {
   let jsonString = JSON.stringify(tasks);
   window.localStorage.setItem("tasks", jsonString);
 }
+
+// function editTasks() {}
