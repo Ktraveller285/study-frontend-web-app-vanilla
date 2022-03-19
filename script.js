@@ -19,6 +19,10 @@ function renderTasks() {
   // 完了済みタスクの件数を数えるための変数を初期化
   let numOfCompletedTasks = 0;
 
+  // 全タスクの件数を更新
+  let numOfTasksElem = document.querySelector("#numOfTasks");
+  numOfTasksElem.innerText = tasks.length;
+
   for (let task of tasks) {
     // リストの項目を作成
     let taskElem = document.createElement("li");
@@ -106,17 +110,10 @@ function renderTasks() {
 
     // リストに対し、項目を追加
     taskListElem.appendChild(taskElem);
-
-    // 全タスクの件数を更新
-    let numOfTasksElem = document.querySelector("#numOfTasks");
-    numOfTasksElem.innerText = tasks.length;
-
-    // 完了済みタスクの件数を更新
-    let numOfCompletedTasksElem = document.querySelector(
-      "#numOfCompletedTasks"
-    );
-    numOfCompletedTasksElem.innerText = numOfCompletedTasks;
   }
+  // 完了済みタスクの件数を更新
+  let numOfCompletedTasksElem = document.querySelector("#numOfCompletedTasks");
+  numOfCompletedTasksElem.innerText = numOfCompletedTasks;
 }
 
 function addTask(taskName, taskDueDate) {
