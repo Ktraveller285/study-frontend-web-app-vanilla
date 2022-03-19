@@ -117,12 +117,17 @@ function renderTasks() {
 }
 
 function addTask(taskName, taskDueDate) {
-  // 重複チェック
-  for (let task of tasks) {
-    if (task.name == taskName) {
-      // 既に存在する場合はダイアログを表示する
-      window.alert("すでに登録済みです");
-      return;
+  // タスク名入力チェック&重複チェック
+  if (!taskName) {
+    window.alert("タスク名を入力してください");
+    return;
+  } else {
+    for (let task of tasks) {
+      if (task.name == taskName) {
+        // 既に存在する場合はダイアログを表示する
+        window.alert("すでに登録済みです");
+        return;
+      }
     }
   }
   // 配列に対し、項目を追加
